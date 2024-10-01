@@ -20,35 +20,67 @@ class WIDGET():
         
         self.entry_name = tk.Message(width = 360, font = font)
         
+        label_bg1 = tk.Label(root, bg = "cyan1")
+        label_bg1.grid(row = 0, column = 0, columnspan = 1, ipadx = 400, ipady = 7, sticky = tk.W + tk.E)
+        label_bg2 = tk.Label(root, bg = "pink1")
+        label_bg2.grid(row = 1, column = 0, columnspan = 1, ipadx = 400, ipady = 5, sticky = tk.W + tk.E)
+        label_bg1 = tk.Label(root, bg = "LightSteelBlue1")
+        label_bg1.grid(row = 2, column = 0, columnspan = 1, ipadx = 400, ipady = 5, sticky = tk.W + tk.E)
+        
         # register
         ## text
-        self.label_entry = tk.Label(text = u"名前")
-        self.label_entry.place(x = 20, y = 10, width = 30, height = 20)
+        #self.label_entry = tk.Label(text = u"名前")
+        #self.label_entry.place(x = 20, y = 10, width = 30, height = 20)
         
         ## text box & process by enter
         self.entry = tk.Entry(root)
         self.entry.bind("<Return>", self.name_register)
-        self.entry.place(x = 60, y = 10, width = 250, height = 20)
+        #self.entry.place(x = 60, y = 10, width = 250, height = 20)
+        self.entry.place(x = 20, y = 10, width = 150, height = 20)
+        
+        ## text
+        self.label_insert = tk.Label(text = u"を", bg = "cyan1")
+        self.label_insert.place(x = 170, y = 10, width = 30, height = 20)
         
         ## button
         self.button_register = tk.Button(root, text = u"登録")
         self.button_register.bind("<Button-1>", self.name_register)
-        self.button_register.place(x = 330, y = 10, width = 50, height = 20)
+        self.button_register.place(x = 200, y = 10, width = 50, height = 20)
         
-        # delete
+        # total
+        ## text
+        self.label_insert = tk.Label(text = u"総参加人数: ", bg = "cyan1")
+        self.label_insert.place(x = 270, y = 10, width = 70, height = 20)
+        
+        # complete
         ## text box & process by enter
         self.entry_del = tk.Entry(root)
         self.entry_del.bind("<Return>", self.name_delete)
         self.entry_del.place(x = 20, y = 40, width = 30, height = 20)
         
         ## text
-        self.label_delete = tk.Label(text = u"番目を")
-        self.label_delete.place(x = 60, y = 40, width = 40, height = 20)
+        self.label_delete = tk.Label(text = u"番目の人", bg = "pink1")
+        self.label_delete.place(x = 60, y = 40, width = 50, height = 20)
+        
+        ## button
+        self.button_register = tk.Button(root, text = u"対戦終了")
+        self.button_register.bind("<Button-1>", self.name_delete)
+        self.button_register.place(x = 120, y = 40, width = 70, height = 20)
+        
+        # delete
+        ## text box & process by enter
+        self.entry_del = tk.Entry(root)
+        self.entry_del.bind("<Return>", self.name_delete)
+        self.entry_del.place(x = 20+180+10, y = 40, width = 30, height = 20)
+        
+        ## text
+        self.label_delete = tk.Label(text = u"番目を", bg = "pink1")
+        self.label_delete.place(x = 60+180+10, y = 40, width = 40, height = 20)
         
         ## button
         self.button_register = tk.Button(root, text = u"削除")
         self.button_register.bind("<Button-1>", self.name_delete)
-        self.button_register.place(x = 110, y = 40, width = 50, height = 20)
+        self.button_register.place(x = 110+180+10, y = 40, width = 50, height = 20)
         
         # insert
         ## text box & process by enter
@@ -57,22 +89,22 @@ class WIDGET():
         self.entry_ins_name.place(x = 20, y = 70, width = 150, height = 20)
         
         ## text
-        self.label_insert = tk.Label(text = u"を")
+        self.label_insert = tk.Label(text = u"を", bg = "LightSteelBlue1")
         self.label_insert.place(x = 170, y = 70, width = 30, height = 20)
         
         ## text box & process by enter
         self.entry_ins_num = tk.Entry(root)
         self.entry_ins_num.bind("<Return>", self.name_insert)
-        self.entry_ins_num.place(x = 200, y = 70, width = 30, height = 20)
+        self.entry_ins_num.place(x = 200+10, y = 70, width = 30, height = 20)
         
         ## text
         self.label_insert2 = tk.Label(text = u"番目に")
-        self.label_insert2.place(x = 240, y = 70, width = 40, height = 20)
+        self.label_insert2.place(x = 240+10, y = 70, width = 40, height = 20)
         
         ## button
         self.button_register = tk.Button(root, text = u"挿入")
         self.button_register.bind("<Button-1>", self.name_insert)
-        self.button_register.place(x = 290, y = 70, width = 50, height = 20)
+        self.button_register.place(x = 290+10, y = 70, width = 50, height = 20)
         
         root.mainloop()
     
