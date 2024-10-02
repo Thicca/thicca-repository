@@ -52,6 +52,7 @@ class WIDGET():
         ##### complete #####
         ## text box & process by enter
         self.entry_com = tk.Entry(root)
+        self.entry_com.insert(tk.END, "1")
         self.entry_com.bind("<Return>", self.name_complete)
         self.entry_com.place(x = 20, y = 40, width = 30, height = 20)
         
@@ -128,16 +129,22 @@ class WIDGET():
                 if self.entry_name:
                     self.entry_name["text"] = self.get_list_to_str(self.entry_name_list)
                     self.entry_count["text"] = str(self.count)
+                    self.entry_com.insert(tk.END, "1")
             else:
                 self.entry_com.delete(0, tk.END)
+                self.entry_com.insert(tk.END, "1")
                 
             self.entry_name.place(x = 20, y = 100)
             self.entry_count.place(x = 340, y = 9)
         except ValueError:
             self.entry_com.delete(0, tk.END)
+            self.entry_com.insert(tk.END, "1")
         except IndexError:
             self.entry_com.delete(0, tk.END)
+            self.entry_com.insert(tk.END, "1")
         else:
+            self.entry_com.delete(0, tk.END)
+            self.entry_com.insert(tk.END, "1")
             return True
     
     def name_delete(self, event):
